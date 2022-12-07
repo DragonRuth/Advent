@@ -1,0 +1,1 @@
+puts File.read('input.txt').split("\n").each_slice(3).to_a.map{|group| group.reduce{ |res, itr| (res.chars & itr.chars).join}}.map{|a| a.swapcase.ord - (a > "Z" ? 64 : 70)}.sum()

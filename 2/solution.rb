@@ -1,0 +1,2 @@
+#for A change match result matrix to [[4,1,7], [8,5,2], [3,9,6]]
+puts File.read('input.txt').split("\n").map{|game| game.split.inject {|opponet, you| [[3,1,2], [4,5,6], [8,9,7]][{"X": 0, "Y": 1, "Z": 2,}[you.to_sym]][{ "A": 0, "B": 1, "C": 2, }[opponet.to_sym]]}}.sum()
