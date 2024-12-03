@@ -1,0 +1,1 @@
+print (["do()"] + File.read('input.txt').split(/(don't\(\))|(do\(\))/)).each_slice(2).map{ |inst,str| inst == "do()" ? str.scan(/mul\((\d+),(\d+)\)/).map{|pair| pair.map{|a| a.to_i}.inject(:*)} : 0}.flatten.sum()

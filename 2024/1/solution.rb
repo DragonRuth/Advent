@@ -1,0 +1,1 @@
+print File.read('input.txt').split(/\s+/).map{ |str| str.to_i}.each_with_index.inject([[], []]){ | a, (id, i)| i.even? ?  a[0] << id : a[1] << id; a}.map{ |arr| arr.sort() }.transpose.map{ |pair| (pair[1]-pair[0]).abs}.sum()

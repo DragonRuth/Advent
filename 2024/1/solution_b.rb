@@ -1,0 +1,1 @@
+print File.read('input.txt').split(/\s+/).map{ |str| str.to_i}.each_with_index.inject([[], []]){ | a, (id, i)| i.even? ?  a[0] << id : a[1] << id; a}.each_slice(2).map{ |a, b|  a.reduce(0) { |sum, el| sum + el*(b.tally[el] || 0 )}}

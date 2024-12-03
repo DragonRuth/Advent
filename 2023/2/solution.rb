@@ -1,0 +1,1 @@
+print File.read('input.txt').split("\n").map{ |line| [line.scan((/\d+(?=:)/)),line.scan(/(\d+ green|\d+ red|\d+ blue)/).flatten.map{ |cubes| cubes.split }]}.select{ |game|  game[1].all?{|group| { "green" => 13, "blue" => 14, "red" => 12}[group[1]] >= group[0].to_i}}.map{ |game| game[0][0].to_i}.sum()

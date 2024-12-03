@@ -1,0 +1,1 @@
+print File.read('input.txt').split("\n").map{|line| line.split.map(&:to_i)}.filter{|r| r.each_cons(2).all? { |a, b| (a <=> b) < 0 && (a-b).abs <= 3 } ||  r.each_cons(2).all? { |a, b| (a <=> b) > 0 && (a-b).abs <= 3  }}.length

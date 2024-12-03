@@ -1,0 +1,1 @@
+print File.read('input.txt').split("\n").map{ |line| line.split(/:|\|/)[1..2].map{| array| array.split.map(&:to_i) }}.select{ |winning, numbers| numbers.any?{ |number| winning.include? number  }}.map{|winning, numbers| numbers.inject(1){ |res, n| winning.include?(n) ? res * 2 : res } / 2}.sum()
